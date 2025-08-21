@@ -23,7 +23,7 @@ docker-build: ## Build production Docker image with maxperf profile
 
 ###############################################################################
 ###                               Development                               ###
-###############################################################################t
+###############################################################################
 
 .PHONY: pr
 pr: ## Run all checks that are run in CI for pull requests
