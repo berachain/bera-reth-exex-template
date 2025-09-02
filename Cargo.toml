@@ -8,16 +8,33 @@ rust-version = "1.88.0"
 [dependencies]
 bera-reth = { git = "https://github.com/berachain/bera-reth", rev = "v1.0.1" }
 
-# Additional utilities
+# # Additional utilities
+# alloy-consensus = "1.0.17"
+# alloy-eips = "1.0.17"
+
+# Alloy deps (should be hardcoded to same alloy version used in Reth)
+alloy = { version = "1.0.17", features = ["sol-types"] }
 alloy-consensus = "1.0.17"
 alloy-eips = "1.0.17"
+alloy-rpc-types = "1.0.17"
+alloy-rpc-types-beacon = { version = "1.0.17", features = ["ssz"] }
+alloy-rpc-types-eth = "1.0.17"
+alloy-rpc-types-trace = { version = "1.0.17", default-features = false }
+alloy-network = "1.0.17"
+
 reth = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-cli-commands = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-evm = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-exex = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-node-api = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-node-builder = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-primitives = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6", features = ["alloy-compat"] }
 reth-primitives-traits = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-rpc = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-rpc-convert = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-rpc-eth-api = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-rpc-eth-types = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+reth-rpc-server-types = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 reth-tracing = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
 
 # Async and utilities
@@ -26,6 +43,18 @@ eyre = "0.6"
 futures = "0.3"
 tokio = { version = "1.0", features = ["full"] }
 tracing = "0.1.41"
+
+# Other deps can use latest version available
+async-trait = ">=0.1.88"
+chrono = ">=0.4.40"
+lazy_static = ">=1.5.0"
+primitive-types = { version = ">=0.13.1", features = ["serde"] }
+serde = { version = ">=1.0.219", features = ["derive"] }
+serde_json = ">=1.0.140"
+serde_yaml = ">=0.9"
+tokio-postgres = { version = ">=0.7.13", features = ["with-chrono-0_4"] }
+hickory-resolver = { version = ">=0.25.0-alpha.5", package = "hickory-resolver" }
+time = { version = ">=0.3.39", package = "time" }
 
 [features]
 default = ["jemalloc"]

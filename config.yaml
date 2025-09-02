@@ -1,0 +1,21 @@
+enabled_events:
+  Headers: true
+  Transactions: true
+  Logs: true
+  Erc20Transfers: true
+  Erc20Metadata: true
+  Traces: true
+  NativeTransfers: true
+  Contracts: true
+  UniV2Pools: true
+  UniV3Pools: true
+  UniV4Pools: true
+  UniV2PoolVolumeTVL: true
+  UniV3PoolVolumeTVL: true
+
+# Configuration for specific datasets
+UniV2PoolVolumeTVL:
+  pools:
+
+UniV3PoolVolumeTVL:
+  pools:
