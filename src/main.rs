@@ -11,15 +11,15 @@ use clap::Parser;
 use reth::CliRunner;
 use reth::cli::Cli;
 use reth_cli_commands::node::NoArgs;
-use reth_evm::EthEvmFactory;
 use reth_node_builder::NodeHandle;
 use reth_tracing::tracing::info;
 use std::sync::Arc;
+use bera_reth::evm::BerachainEvmFactory;
 
 fn main() -> eyre::Result<()> {
     let cli_components_builder = |spec: Arc<BerachainChainSpec>| {
         (
-            BerachainEvmConfig::new_with_evm_factory(spec.clone(), EthEvmFactory::default()),
+            BerachainEvmConfig::new_with_evm_factory(spec.clone(), BerachainEvmFactory::default()),
             BerachainBeaconConsensus::new(spec),
         )
     };

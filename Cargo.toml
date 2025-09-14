@@ -4,27 +4,26 @@ version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.88.0"
+resolver = "2"
 
 [dependencies]
-bera-reth = { git = "https://github.com/berachain/bera-reth", rev = "v1.0.1" }
+bera-reth = { git = "https://github.com/berachain/bera-reth", tag = "v1.1.0" }
 
-# Additional utilities
-alloy-consensus = "1.0.17"
-alloy-eips = "1.0.17"
-reth = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-cli-commands = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-evm = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-exex = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-node-api = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-node-builder = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-primitives-traits = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
-reth-tracing = { git = "https://github.com/paradigmxyz/reth", rev = "48941e6" }
+# Additional utilities - let bera-reth control alloy versions
+# alloy crates will be resolved through bera-reth dependency
+reth = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
+reth-cli-commands = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
+reth-evm = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0"}
+reth-exex = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
+reth-node-api = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
+reth-node-builder = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
+reth-primitives-traits = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0"}
+reth-tracing = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 
 # Async and utilities
 clap = { version = "4", features = ["derive"] }
 eyre = "0.6"
 futures = "0.3"
-tokio = { version = "1.0", features = ["full"] }
 tracing = "0.1.41"
 
 [features]
@@ -48,17 +47,3 @@ incremental = false
 name = "bera-reth"
 path = "src/main.rs"
 
-[patch.crates-io]
-# patches inherited from bera-reth
-alloy-evm = { git = "https://github.com/berachain/evm", rev = "4e14d80" }
-revm = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-primitives = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-bytecode = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-database = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-state = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-interpreter = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-inspector = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-context = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-context-interface = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-revm-database-interface = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
-op-revm = { git = "https://github.com/bluealloy/revm", rev = "9008e93" }
