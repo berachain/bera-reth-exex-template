@@ -3,8 +3,8 @@ name = "bera-reth-exex-template"
 version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
-rust-version = "1.88.0"
 resolver = "2"
+rust-version = "1.88.0"
 
 [dependencies]
 bera-reth = { git = "https://github.com/berachain/bera-reth", tag = "v1.1.0" }
@@ -13,11 +13,11 @@ bera-reth = { git = "https://github.com/berachain/bera-reth", tag = "v1.1.0" }
 # alloy crates will be resolved through bera-reth dependency
 reth = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 reth-cli-commands = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
-reth-evm = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0"}
+reth-evm = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 reth-exex = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 reth-node-api = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 reth-node-builder = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
-reth-primitives-traits = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0"}
+reth-primitives-traits = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 reth-tracing = { git = "https://github.com/paradigmxyz/reth", tag = "v1.7.0" }
 
 # Async and utilities
@@ -46,4 +46,3 @@ incremental = false
 [[bin]]
 name = "bera-reth"
 path = "src/main.rs"
-
