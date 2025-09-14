@@ -3,6 +3,7 @@
 mod exex;
 
 use bera_reth::chainspec::BerachainChainSpecParser;
+use bera_reth::evm::BerachainEvmFactory;
 use bera_reth::{
     chainspec::BerachainChainSpec, consensus::BerachainBeaconConsensus, node::BerachainNode,
     node::evm::config::BerachainEvmConfig,
@@ -14,7 +15,6 @@ use reth_cli_commands::node::NoArgs;
 use reth_node_builder::NodeHandle;
 use reth_tracing::tracing::info;
 use std::sync::Arc;
-use bera_reth::evm::BerachainEvmFactory;
 
 fn main() -> eyre::Result<()> {
     let cli_components_builder = |spec: Arc<BerachainChainSpec>| {
