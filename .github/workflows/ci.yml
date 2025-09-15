@@ -9,6 +9,10 @@ on:
   pull_request:
   merge_group:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
   security-events: write
@@ -16,7 +20,7 @@ permissions:
 jobs:
   pr-title:
     name: Validate PR title
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     if: github.event_name == 'pull_request'
     steps:
       - uses: amannn/action-semantic-pull-request@v5
@@ -42,7 +46,7 @@ jobs:
 
   fmt:
     name: Check formatting
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
@@ -56,7 +60,7 @@ jobs:
 
   toml-fmt:
     name: Check TOML formatting
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
@@ -65,7 +69,7 @@ jobs:
 
   clippy:
     name: Clippy lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
@@ -82,7 +86,7 @@ jobs:
 
   test:
     name: Run tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
@@ -97,7 +101,7 @@ jobs:
 
   build:
     name: Build binary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
@@ -112,7 +116,7 @@ jobs:
 
   docs:
     name: Check documentation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-large
     steps:
       - uses: actions/checkout@v5
 
