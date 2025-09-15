@@ -26,6 +26,10 @@ eyre = "0.6"
 futures = "0.3"
 tracing = "0.1.41"
 
+# Pin serde to working version to avoid known alloy-consensus deserialize issue
+# See: https://github.com/alloy-rs/alloy/issues/1349
+serde = { version = "=1.0.219" }
+
 [features]
 default = ["jemalloc"]
 jemalloc = ["dep:tikv-jemallocator"]
