@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest-large
     if: github.event_name == 'pull_request'
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
+      - uses: amannn/action-semantic-pull-request@e32d7e603df1aa1ba07e981f2a23455dee596825 # v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -48,7 +48,7 @@ jobs:
     name: Check formatting
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
@@ -62,16 +62,16 @@ jobs:
     name: Check TOML formatting
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Setup dprint
-        uses: dprint/check@v2.3
+        uses: dprint/check@9cb3a2b17a8e606d37aae341e49df3654933fc23 # v2.3
 
   clippy:
     name: Clippy lint
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
@@ -88,7 +88,7 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
@@ -103,7 +103,7 @@ jobs:
     name: Build binary
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
@@ -118,7 +118,7 @@ jobs:
     name: Check documentation
     runs-on: ubuntu-latest-large
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
